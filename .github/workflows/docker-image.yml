@@ -27,7 +27,7 @@ jobs:
       with:
         context: .
         push: true
-        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ github.repository }}:${{ steps.meta.outputs.tags }}
+        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/$(echo ${{ github.repository }} | cut -d'/' -f2):${{ steps.meta.outputs.tags }}
 
     - name: Docker Metadata
       uses: docker/metadata-action@v3
