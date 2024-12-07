@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.5.0](https://github.com/huunghiaish/devops-zero-demo/compare/v5.4.0...v5.5.0) (2024-12-07)
+
+
+### Features
+
+* test 2 ([37d78b5](https://github.com/huunghiaish/devops-zero-demo/commit/37d78b5ecaa3974491a6fd7f6f20ead781376af7))
+
 ## [5.4.0](https://github.com/huunghiaish/devops-zero-demo/compare/v5.3.0...v5.4.0) (2024-12-07)
 
 
