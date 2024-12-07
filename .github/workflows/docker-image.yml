@@ -2,8 +2,8 @@ name: Build and Push Docker Image
 
 on:
   push:
-    tags:
-      - 'v*'
+    branches:
+      - main
 
 jobs:
   build:
@@ -22,17 +22,16 @@ jobs:
         username: ${{ secrets.DOCKER_HUB_USERNAME }}
         password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
-    - name: Extract metadata for Docker
-      id: meta
-      uses: docker/metadata-action@v3
-      with:
-        tags: |
-          type=ref,event=branch
-          type=ref,event=tag
-
     - name: Build and push Docker image
-      uses: docker/build-push-action@v3
+      uses: docker/build-push-action@v2
       with:
         context: .
         push: true
-        tags: ${{ steps.meta.outputs.tags }}
+        tags: huunghiaish/devops-zero-demo:${{ github.ref_name }}
+
+    - name: Docker Metadata
+      uses: docker/metadata-action@v3
+      with:
+        images: huunghiaish/devops-zero-demo
+        tags: type=ref,event=branch
+        github-token: ${{ secrets.GITHUB_TOKEN }}
